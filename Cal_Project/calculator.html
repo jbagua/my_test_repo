@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<style>
+			body {
+			font-family: Arial, Helvetica, sans-serif;
+			background-image:url("155.jpg");
+			}
+			
+			#nev{
+				align-content: center;
+			width:360px;
+			height:450px;
+			background-color:rgba(58, 56, 56, 0.5);
+			margin:0 auto;
+			margin-top: 40px;
+			padding-top:15px;
+			padding-bottom:5px;
+			border-radius:30px;
+			-webkit-border-radius:15px;
+			-o-border-radius:15px;
+			-moz-border-radius:15px;
+			color:white;
+			font-weight:lighter;
+			box-shadow: insert-4px -4px rgba(0,0.1,0,0.5);
+			position: center;
+			border-color: crimson;
+			}
+
+			.container {
+			padding: 10px 15px;
+			}
+			img{
+				margin: 0;
+				padding: 1px 1px;
+			}
+
+			/* Set a style for all buttons */
+			button {
+			background-color: #242223;
+			color: white;
+			padding: 5px 20px;
+			margin: 8px 9px;
+			border: none;
+			cursor: pointer;
+			width: 100%;
+			font-size: 20px;
+			border-radius: 30px 30px;
+			
+			}
+
+			button:hover {
+			opacity: 0.5;
+			}
+			
+
+			/* Add Zoom Animation */
+			
+			/* Change styles for span and cancel button on extra small screens */
+			@media screen and (max-width: 300px) {
+			span.psw {
+			display: block;
+			float: none;
+			}
+			}
+		
+			#inputLabel{
+			padding: 1px 29px;
+			height: 45px;
+			font-size: 20px;
+			top: 50px;
+			text-align: right;
+			padding-right: 18px;
+			background-color: rgb(12, 89, 92);
+
+			}
+
+			#h1{
+			display:inline;
+			margin:0;
+			padding-top: 3px;
+			font-family:distant galaxy;
+			color:white;
+			}
+	
+			p{
+			color: dark-gray;
+			}
+
+			
+			td{
+			border-radius: 30px 30px;
+			margin-bottom: 10px;
+			}
+
+
+		</style>
+
+	</head>
+	<body>
+		<div id ="nev">
+
+			<h1 align="center">My Calculator</h1>
+
+			<div class = "container">
+				<!--<img src="cal5.png" height="100" weight="100">-->
+				
+				<table border ="0"cellspacing ="5">
+					<tr>
+						<td colspan = "7" id ="inputLabel">0</td>
+					</tr>
+					<tr>
+						<td colspan ="3"><button onclick = "pushBtn(this);" onkeydown="press(this);">AC</button></td>
+						<!--<td><button id= "pushBtn(this);">/</button></td>-->
+						<td><button onclick = "pushBtn(this);"onkeydown="press(this);">/</button></td>
+					</tr>
+					<tr>
+				
+					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">7</button></td>
+					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">8</button></td>
+					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">9</button></td>
+					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">*</button></td>
+
+					</tr>
+					<tr>
+					
+					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">4</button></td>
+					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">5</button></td>
+					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">6</button></td>
+					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">-</button></td>
+
+					</tr>
+					<tr>
+					
+					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">1</button></td>  
+					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">2</button></td>
+					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">3</button></td>
+					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">+</button></td>
+
+					</tr>
+					<tr>
+					
+					<td colspan="2"><button onclick = "pushBtn(this);"onkeydown="press(this)">0</button></td>  
+					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">.</button></td>
+					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">=</button></td>
+					
+					</tr>
+				</div>
+			</div>
+
+			<script>
+					//Selecting the buttons
+					
+					var inputLabel=document.getElementById("inputLabel");
+					var inputLabel=document.getElementById("inputLabel");
+				
+					
+					function press(event){//Function to calculate using on keyboard press
+						var cal = event.key;
+						
+
+						if (cal=="="){
+							//Calculating 
+							inputLabel.innerHTML=eval(inputLabel.innerHTML);
+						}else if (cal == "AC"){
+							inputLabel.innerHTML = "0";
+						}else{
+							if(inputLabel.innerHTML=="0"){
+								inputLabel.innerHTML = cal;
+						}else{
+							inputLabel.innerHTML += cal;
+						}
+
+					}
+
+						
+					}
+					//Function to Calculate (+,-,*,/)
+					function pushBtn(obj){//Function to calculate using on mouse keypress
+						var pushed = obj.innerHTML;
+						
+						if (pushed=="="){
+							//Calculating 
+							inputLabel.innerHTML=eval(inputLabel.innerHTML);
+						}else if (pushed == "AC"){
+							inputLabel.innerHTML = "0";
+						}else{
+							if(inputLabel.innerHTML=="0"){
+								inputLabel.innerHTML = pushed;
+						}else{
+							inputLabel.innerHTML += pushed;
+						}
+
+					}
+				}
+				inputLabel.addEventListener("click",pushBtn);//Create Event Listener for click event
+				inputLabel.addEventListener("keydown",press)//Create Event Lsitener for keypress event
+
+			</script>
+
+	</body>
+</html>
