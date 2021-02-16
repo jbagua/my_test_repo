@@ -112,39 +112,39 @@
 						<td colspan = "7" id ="inputLabel">0</td>
 					</tr>
 					<tr>
-						<td colspan ="3"><button onclick = "pushBtn(this);" onkeydown="press(this);">AC</button></td>
+						<td colspan ="3"><button onclick = "pushBtn(this);">AC</button></td>
 						<!--<td><button id= "pushBtn(this);">/</button></td>-->
 						<td><button onclick = "pushBtn(this);"onkeydown="press(this);">/</button></td>
 					</tr>
 					<tr>
 				
-					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">7</button></td>
-					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">8</button></td>
-					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">9</button></td>
-					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">*</button></td>
+					<td><button onclick = "pushBtn(this);">7</button></td>
+					<td><button onclick = "pushBtn(this);">8</button></td>
+					<td><button onclick = "pushBtn(this);">9</button></td>
+					<td><button onclick = "pushBtn(this);">*</button></td>
 
 					</tr>
 					<tr>
 					
-					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">4</button></td>
-					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">5</button></td>
-					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">6</button></td>
-					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">-</button></td>
+					<td><button onclick = "pushBtn(this);">4</button></td>
+					<td><button onclick = "pushBtn(this);">5</button></td>
+					<td><button onclick = "pushBtn(this);">6</button></td>
+					<td><button onclick = "pushBtn(this);">-</button></td>
 
 					</tr>
 					<tr>
 					
-					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">1</button></td>  
-					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">2</button></td>
-					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">3</button></td>
-					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">+</button></td>
+					<td><button onclick = "pushBtn(this);">1</button></td>  
+					<td><button onclick = "pushBtn(this);">2</button></td>
+					<td><button onclick = "pushBtn(this);">3</button></td>
+					<td><button onclick = "pushBtn(this);">+</button></td>
 
 					</tr>
 					<tr>
 					
-					<td colspan="2"><button onclick = "pushBtn(this);"onkeydown="press(this)">0</button></td>  
-					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">.</button></td>
-					<td><button onclick = "pushBtn(this);"onkeydown="press(this);">=</button></td>
+					<td colspan="2"><button onclick = "pushBtn(this);">0</button></td>  
+					<td><button onclick = "pushBtn(this);">.</button></td>
+					<td><button onclick = "pushBtn(this);">=</button></td>
 					
 					</tr>
 				</div>
@@ -154,29 +154,7 @@
 					//Selecting the buttons
 					
 					var inputLabel=document.getElementById("inputLabel");
-					var inputLabel=document.getElementById("inputLabel");
-				
 					
-					function press(event){//Function to calculate using on keyboard press
-						var cal = event.key;
-						
-
-						if (cal=="="){
-							//Calculating 
-							inputLabel.innerHTML=eval(inputLabel.innerHTML);
-						}else if (cal == "AC"){
-							inputLabel.innerHTML = "0";
-						}else{
-							if(inputLabel.innerHTML=="0"){
-								inputLabel.innerHTML = cal;
-						}else{
-							inputLabel.innerHTML += cal;
-						}
-
-					}
-
-						
-					}
 					//Function to Calculate (+,-,*,/)
 					function pushBtn(obj){//Function to calculate using on mouse keypress
 						var pushed = obj.innerHTML;
@@ -196,7 +174,7 @@
 					}
 				}
 				inputLabel.addEventListener("click",pushBtn);//Create Event Listener for click event
-				inputLabel.addEventListener("keydown",press)//Create Event Lsitener for keypress event
+				
 
 			</script>
 
